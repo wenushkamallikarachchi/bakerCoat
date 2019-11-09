@@ -1,0 +1,194 @@
+.menu{
+    background-color: #ffffff;
+    box-shadow: 0 1px 3px 0 rgba(0, 0, 0, .12), 0 1px 2px 0 rgba(0, 0, 0, .24);
+  }
+  
+  .menu__list{
+    text-align: center;
+    padding-left: 0;
+    margin-top: -100px;
+    margin-bottom: 0;
+    list-style: none;  
+  }
+  
+  .menu__link{
+    display: block;
+    padding: 1rem 1.5rem;
+  
+    will-change: color;
+    transition: color .25s ease-out;  
+  
+    font-weight: 700;
+    color: rgb(104, 100, 100);
+    text-decoration: none;
+   /* text-transform: uppercase;*/
+  }
+  
+  .menu__link:focus{
+    outline: 1px solid rgb(10, 10, 10);
+  }
+  
+  @media (min-width: 601px){
+  
+    .menu__list{
+      display: flex;  
+    }
+  
+    .menu__group{
+      flex-grow: 1;
+    }
+  
+    .menu__link{
+      position: relative;
+      overflow: hidden;
+    }
+  
+    .menu__link:before, .menu__link:after{
+      content: "";
+      width: 0;
+      height: 3px;
+      background-color: #fff;
+  
+      will-change: width;
+      transition: width .05s ease-out;
+  
+      position: absolute;
+      bottom: 0;
+    }
+  
+    .menu__link:before{
+      left: 50%;
+      transform: translateX(-50%); 
+    }
+  
+    .menu__link:after{
+      right: 50%;
+      transform: translateX(50%); 
+    }
+  
+    .menu__link:hover:before, .menu__link:hover:after{
+      width: 100%;
+      transition-duration: .15s;
+    }
+  }
+  
+  /* hover effect */
+  
+  .menu:hover .menu__link:not(:hover){
+    color: #241c69;
+  }
+  /* latin-ext */
+@font-face {
+    font-family: 'Raleway';
+    font-style: normal;
+    font-weight: 400;
+    src: local('Raleway'), local('Raleway-Regular'), url(https://fonts.gstatic.com/s/raleway/v13/1Ptug8zYS_SKggPNyCMIT5lu.woff2) format('woff2');
+    unicode-range: U+0100-024F, U+0259, U+1E00-1EFF, U+2020, U+20A0-20AB, U+20AD-20CF, U+2113, U+2C60-2C7F, U+A720-A7FF;
+  }
+  /* latin */
+  @font-face {
+    font-family: 'Raleway';
+    font-style: normal;
+    font-weight: 400;
+    src: local('Raleway'), local('Raleway-Regular'), url(https://fonts.gstatic.com/s/raleway/v13/1Ptug8zYS_SKggPNyC0ITw.woff2) format('woff2');
+    unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+  }
+  /* latin */
+  @font-face {
+    font-family: 'Reenie Beanie';
+    font-style: normal;
+    font-weight: 400;
+    src: local('Reenie Beanie'), local('ReenieBeanie'), url(https://fonts.gstatic.com/s/reeniebeanie/v9/z7NSdR76eDkaJKZJFkkjuvWxXPq1qw.woff2) format('woff2');
+    unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+  }
+  
+  
+
+* {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  margin: 5%;
+  font-family: "Raleway", sans-serif;
+  line-height: 1.5em;
+}
+
+img {
+  width: 100%;
+}
+
+a {
+  color: black;
+}
+
+.caption,
+h1,
+.date {
+  margin: 0;
+  text-align: center;
+}
+
+.caption,
+h1 {
+  font-family: "Reenie Beanie", sans-serif;
+  font-size: 2em;
+  padding: 10px 10px 0 10px;
+}
+
+.date {
+  font-size: 0.75em;
+}
+
+.description {
+  font-size: 0.9em;
+  padding: 0 20px 20px 20px;
+  text-align: left;
+}
+
+.container {
+  perspective: 1000px;
+  display: inline-block;
+  margin: 3%;
+}
+
+.container:hover .flipper {
+  transform: rotateY(180deg);
+}
+
+.container,
+.front,
+.back {
+  width: 250px;
+  height: 250px;
+}
+
+.flipper {
+  transition: 0.6s;
+  transform-style: preserve-3d;
+  position: relative;
+}
+
+.front,
+.back {
+  backface-visibility: hidden;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 250px;
+  height: 250px;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+.front {
+  z-index: 2;
+}
+
+.back {
+  transform: rotateY(180deg);
+}
+
+#content {
+  text-align: center;
+}
