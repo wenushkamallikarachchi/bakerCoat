@@ -1,1 +1,1 @@
-written by wenushka and himasha
+written by wenushka 
